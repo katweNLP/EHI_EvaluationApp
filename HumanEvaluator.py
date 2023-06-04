@@ -53,12 +53,13 @@ if index not in user_inputs:
     user_inputs[index] = {}
 
 for key, value in entry.items():
-  if(key not in skiplist):
+  
 
     st.write(f'{key}: {value}')
+    if(key not in skiplist):
     # Create input boxes for user to enter scores
-    user_input = st.number_input(f'Enter a number for {key}', min_value=0, max_value=10)
-    user_inputs[index][key] = user_input
+     user_input = st.number_input(f'Enter a number for {key}', min_value=0, max_value=10)
+     user_inputs[index][key] = user_input
 
 st.session_state.user_inputs = user_inputs
 
